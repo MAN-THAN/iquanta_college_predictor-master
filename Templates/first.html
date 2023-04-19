@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Title -->
+        <title>
+            CAT SCORE PREDICTOR
+        </title>
+        <h1>
+            iQuanta
+            <br>
+        </h1>
+    </head>
+    <body>
+        <h2>
+            Enter Your Details 
+        </h2>
+        <form action = "" method = "post">
+            {% csrf_token %}
+            <div>
+                <label for="name"> Name </label> <br>
+                <input type="text" id ="name" name="name" required>
+            </div>
+            <div>
+                <label for="email"> Email </label> <br>
+                <input type="email" id ="email" name="email" required>
+            </div>
+            <div>
+                <label for="phone"> Phone no. </label> <br>
+                <input type="number" id ="phone" name="phone" required>
+            </div>
+            <div>
+                <label for="gender"> Gender</label> <br>
+                <input type="radio" name="gender" value="male" checked> Male
+                <input type="radio" name="gender" value="female"> Female
+                <input type="radio" name="gender" value="other"> Other
+            </div>
+            <h3>
+                Academic Details
+            </h3>
+            <div>
+                <label for="x_percent"> Class X Percentage </label> <br>
+                <input type="number" id ="x_percent" name="x_percent" required>
+            </div>
+            <div>
+                <label for="xii_percent"> Class XII Percentage </label> <br>
+                <input type="number" id ="xii_percent" name="xii_percent" required>
+            </div>
+            <div>
+                <label for="xii_stream"> Class XII Stream </label> <br>
+                <input type="radio" name="xii_stream" value="Science" checked> Science
+                <input type="radio" name="xii_stream" value="Commerce"> Commerce
+                <input type="radio" name="xii_stream" value="Arts"> Arts 
+                <br>
+                
+            </div>
+            <div>
+                <label for="degree_percent"> Graduation Percentage </label> <br>
+                <input type="number" id ="degree_percent" name="degree_percent" step=".01" required>
+                <br>
+            </div>
+            <div>
+                <label for="degree_cat"> Degree Type </label> <br>
+                <input type="radio" name="degree_cat" value="Science" checked> Engineer
+                <input type="radio" name="degree_cat" value="Commerce"> Non-Engineer
+                <br>
+            </div>
+            <div>
+                <label for="workex"> Work Experience(in Months) </label> <br>
+                <input type="number" id ="workex" name="workex" required>
+            </div>
+            <div>
+                <label for="category"> Category </label> <br>
+                <input type="radio" name="category" value="General" checked> General
+                <input type="radio" name="category" value="NC-OBC-cum-Transgender">NC-OBC-cum-Transgender
+                <input type="radio" name="category" value="SC" > SC
+                <input type="radio" name="category" value="ST"> ST
+                <input type="radio" name="category" value="PWD"> PWD
+                <br>
+            </div>
+            <div>
+                <br>
+                <input type="submit" value="Submit">
+                <input type="reset">
+            </div>
+        </form>
+        <!-- <ul>
+            <li>Name</li>
+            <li>Gender</li>    
+        </ul> -->
+    </body>
+</html>

@@ -1,0 +1,247 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>iQuanta CAT Predictor</title>
+    <link href="{% static 'css/form.css'%}" rel="stylesheet" type="text/css">
+    <script src="{% static 'js/validation.js' %}"></script>
+  </head>
+  <body class="zf-backgroundBg">
+    <!-- Change or deletion of the name attributes in the input tag will lead to empty values on record submission-->
+    <div class="zf-templateWidth">
+      <form action='' name='form' method='POST' onSubmit='javascript:document.charset="UTF-8"; return zf_ValidateAndSubmit();' accept-charset='UTF-8' enctype='multipart/form-data' id='form'>
+        {% comment %} <input type="hidden" name="zf_referrer_name" value="">
+        <!-- To Track referrals , place the referrer name within the " " in the above hidden input field -->
+        <input type="hidden" name="zf_redirect_url" value="">
+        <!-- To redirect to a specific page after record submission , place the respective url within the " " in the above hidden input field -->
+        <input type="hidden" name="zc_gad" value=""> {% endcomment %}
+        <!-- If GCLID is enabled in Zoho CRM Integration, click details of AdWords Ads will be pushed to Zoho CRM -->
+        {% csrf_token %}
+        <div class="zf-templateWrapper">
+          <!---------template Header Starts Here---------->
+          <ul class="zf-tempHeadBdr">
+            <li class="zf-tempHeadContBdr">
+              <h2 class="zf-frmTitle">
+                <em>iQuanta CAT ELIGBLITY CHECKER</em>
+              </h2>
+              <p class="zf-frmDesc"></p>
+              <div class="zf-clearBoth"></div>
+            </li>
+          </ul>
+          <!---------template Header Ends Here---------->
+          <!---------template Container Starts Here---------->
+          <div class="zf-subContWrap zf-topAlign">
+            <ul>
+              <!---------Name Starts Here---------->
+              <li class="zf-tempFrmWrapper zf-name zf-namemedium">
+                <label class="zf-labelName"> Full name <em class="zf-important">*</em>
+                </label>
+                <div class="zf-tempContDiv zf-twoType">
+                  <div class="zf-nameWrapper">
+                    <span>
+                      <input type="text" maxlength="255" name="Name_First" fieldType=7 placeholder="" />
+                      <label>First</label>
+                    </span>
+                    </span>
+                    </span>
+                    <span>
+                      <input type="text" maxlength="255" name="Name_Last" fieldType=7 placeholder="" />
+                      <label>Last</label>
+                    </span>
+                    </span>
+                    </span>
+                    <div class="zf-clearBoth"></div>
+                  </div>
+                  <p id="Name_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
+                </div>
+                <div class="zf-clearBoth"></div>
+              </li>
+              <!---------Name Ends Here---------->
+              <!---------Email Starts Here---------->
+              <li class="zf-tempFrmWrapper zf-small">
+                <label class="zf-labelName"> Email <em class="zf-important">*</em>
+                </label>
+                <div class="zf-tempContDiv">
+                  <span>
+                    <input fieldType=9 type="text" maxlength="255" name="Email" checktype="c5" value="" placeholder="" />
+                  </span>
+                  <p id="Email_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
+                </div>
+                <div class="zf-clearBoth"></div>
+              </li>
+              <!---------Email Ends Here---------->
+              <!---------Phone Starts Here---------->
+              <li class="zf-tempFrmWrapper zf-small">
+                <label class="zf-labelName"> Contact number <em class="zf-important">*</em>
+                </label>
+                <div class="zf-tempContDiv zf-phonefld">
+                  <div class="zf-phwrapper zf-phNumber">
+                    <span>
+                      <input type="text" compname="PhoneNumber" name="PhoneNumber" maxlength="20" checktype="c7" value="" phoneFormat="1" isCountryCodeEnabled=false fieldType="11" id="international_PhoneNumber_countrycode" valType="number" phoneFormatType="1" placeholder="" />
+                      <label>Number</label>
+                    </span>
+                    <div class="zf-clearBoth"></div>
+                  </div>
+                  <p id="PhoneNumber_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
+                </div>
+                <div class="zf-clearBoth"></div>
+              </li>
+              <!---------Phone Ends Here---------->
+              <!---------Radio Starts Here---------->
+              <li class="zf-radio zf-tempFrmWrapper zf-oneColumns">
+                <label class="zf-labelName">Gender <em class="zf-important">*</em>
+                </label>
+                <div class="zf-tempContDiv">
+                  <div class="zf-overflow">
+                    <span class="zf-multiAttType">
+                      <input class="zf-radioBtnType" type="radio" id="Radio1_1" name="Gender" checktype="c1" value="Male">
+                      <label for="Radio1_1" class="zf-radioChoice">Male</label>
+                    </span>
+                    <span class="zf-multiAttType">
+                      <input class="zf-radioBtnType" type="radio" id="Radio1_2" name="Gender" checktype="c1" value="Female">
+                      <label for="Radio1_2" class="zf-radioChoice">Female</label>
+                    </span>
+                    <div class="zf-clearBoth"></div>
+                  </div>
+                  <p id="Radio1_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
+                </div>
+                <div class="zf-clearBoth"></div>
+              </li>
+              <!---------Radio Ends Here---------->
+              <!---------Section Starts Here---------->
+              <li class="zf-tempFrmWrapper zf-section">
+                <h2>Academic Details</h2>
+                <p></p>
+              </li>
+              <!---------Section Ends Here---------->
+              <!---------Number Starts Here---------->
+              <li class="zf-tempFrmWrapper zf-small">
+                <label class="zf-labelName"> Class 10 Score <em class="zf-important">*</em></label>
+                <div class="zf-tempContDiv">
+                  <span>
+                    <input type="text" name="x_percent" checktype="c2" value="" maxlength="18" placeholder="Percentage" />
+                  </span>
+                  <p id="Number_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
+                </div>
+                <div class="zf-clearBoth"></div>
+              </li>
+              <!---------Number Ends Here---------->
+              <!---------Number Starts Here---------->
+              <li class="zf-tempFrmWrapper zf-small">
+                <label class="zf-labelName"> Class 12 Score <em class="zf-important">*</em>
+                </label>
+                <div class="zf-tempContDiv">
+                  <span>
+                    <input type="text" name="xii_percent" checktype="c2" value="" maxlength="18" placeholder="Percentage" />
+                  </span>
+                  <p id="Number1_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
+                </div>
+                <div class="zf-clearBoth"></div>
+              </li>
+              <!---------Number Ends Here---------->
+              <!---------Dropdown Starts Here---------->
+              <li class="zf-tempFrmWrapper zf-small">
+                <label class="zf-labelName"> Class 12 Stream <em class="zf-important">*</em>
+                </label>
+                <div class="zf-tempContDiv">
+                  <select class="zf-form-sBox" name="xii_stream" checktype="c1">
+                    <option selected="true" value="-Select-">-Select-</option>
+                    <option value="Science">Science</option>
+                    <option value="Commerce">Commerce</option>
+                    <option value="Arts">Arts</option>
+                  </select>
+                  <p id="Dropdown_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
+                </div>
+                <div class="zf-clearBoth"></div>
+              </li>
+              <!---------Dropdown Ends Here---------->
+              <!---------Number Starts Here---------->
+              <li class="zf-tempFrmWrapper zf-small">
+                <label class="zf-labelName"> Graduation Score <em class="zf-important">*</em>
+                </label>
+                <div class="zf-tempContDiv">
+                  <span>
+                    <input type="text" name="degree_percent" checktype="c2" value="" maxlength="18" placeholder="Percentage" />
+                  </span>
+                  <p id="Number2_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
+                </div>
+                <div class="zf-clearBoth"></div>
+              </li>
+              <!---------Number Ends Here---------->
+              <!---------Radio Starts Here---------->
+              <li class="zf-radio zf-tempFrmWrapper zf-oneColumns">
+                <label class="zf-labelName">Graduation Type <em class="zf-important">*</em>
+                </label>
+                <div class="zf-tempContDiv">
+                  <div class="zf-overflow">
+                    <span class="zf-multiAttType">
+                      <input class="zf-radioBtnType" type="radio" id="Radio_1" name="degree_cat" checktype="c1" value="Engineering">
+                      <label for="Radio_1" class="zf-radioChoice">Engineering</label>
+                    </span>
+                    <span class="zf-multiAttType">
+                      <input class="zf-radioBtnType" type="radio" id="Radio_2" name="degree_cat" checktype="c1" value="Non-Engineering">
+                      <label for="Radio_2" class="zf-radioChoice">Non-Engineering</label>
+                    </span>
+                    <div class="zf-clearBoth"></div>
+                  </div>
+                  <p id="Radio_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
+                </div>
+                <div class="zf-clearBoth"></div>
+              </li>
+              <!---------Radio Ends Here---------->
+              <!---------Dropdown Starts Here---------->
+              <li class="zf-tempFrmWrapper zf-small">
+                <label class="zf-labelName"> Category <em class="zf-important">*</em>
+                </label>
+                <div class="zf-tempContDiv">
+                  <select class="zf-form-sBox" name="category" checktype="c1">
+                    <option selected="true" value="-Select-">-Select-</option>
+                    <option value="General">General</option>
+                    <option value="NC-OBC-cum-Transgender">NC-OBC-cum-Transgender</option>
+                    <option value="SC">SC</option>
+                    <option value="ST">ST</option>
+                    <option value="PWD">PWD</option>
+                  </select>
+                  <p id="Dropdown1_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
+                </div>
+                <div class="zf-clearBoth"></div>
+              </li>
+              <!---------Dropdown Ends Here---------->
+                <!---------Number Starts Here---------->
+                <li class="zf-tempFrmWrapper zf-small">
+                    <label class="zf-labelName"> Work Experience <em class="zf-important">*</em>
+                    </label>
+                    <div class="zf-tempContDiv">
+                        <span>
+                        <input type="text" name="workex" checktype="c2" value="" maxlength="18" placeholder="in Months" />
+                        </span>
+                        <p id="Number_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
+                    </div>
+                    <div class="zf-clearBoth"></div>
+                    </li>
+                    <!---------Number Ends Here---------->
+            </ul>
+          </div>
+          <!---------template Container Starts Here---------->
+          <ul>
+            <li class="zf-fmFooter">
+              <button class="zf-submitColor">Submit</button>
+            </li>
+          </ul>
+        </div>
+        <!-- 'zf-templateWrapper' ends -->
+      </form>
+    </div>
+    <!-- 'zf-templateWidth' ends -->
+    <script type="text/javascript">
+      var zf_DateRegex = new RegExp("^(([0][1-9])|([1-2][0-9])|([3][0-1]))[-](Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec|JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)[-](?:(?:19|20)[0-9]{2})$");
+      var zf_MandArray = ["Name_First", "Name_Last", "Email", "PhoneNumber_countrycode", "Radio1", "Number", "Number1", "Dropdown", "Number2", "Radio", "Dropdown1"];
+      var zf_FieldArray = ["Name_First", "Name_Last", "Email", "PhoneNumber_countrycode", "Radio1", "Number", "Number1", "Dropdown", "Number2", "Radio", "Dropdown1"];
+      {% comment %} var isSalesIQIntegrationEnabled = false;
+      var salesIQFieldsArray = []; {% endcomment %}
+    </script>
+  </body>
+</html>
